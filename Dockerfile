@@ -1,7 +1,11 @@
 
 # s2i-stress
 #FROM openshift/base-centos7
-FROM dkuffner/docker-stress
+#FROM dkuffner/docker-stress
+FROM centos/s2i-base-centos7
+
+RUN rpm -ivh http://mirror.de.leaseweb.net/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN yum install -y stress
 
 # TODO: Put the maintainer name in the image metadata
 # MAINTAINER Your Name <your@email.com>
