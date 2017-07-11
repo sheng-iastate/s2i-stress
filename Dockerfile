@@ -4,7 +4,8 @@
 #FROM dkuffner/docker-stress
 FROM centos/s2i-base-centos7
 
-RUN rpm -ivh http://mirror.de.leaseweb.net/epel/6/x86_64/epel-release-6-8.noarch.rpm
+#RUN rpm -ivh http://mirror.de.leaseweb.net/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN yum install epel-release
 RUN yum install -y stress
 
 # TODO: Put the maintainer name in the image metadata
