@@ -1,6 +1,7 @@
 
 # s2i-stress
-FROM openshift/base-centos7
+#FROM openshift/base-centos7
+FROM dkuffner/docker-stress
 
 # TODO: Put the maintainer name in the image metadata
 # MAINTAINER Your Name <your@email.com>
@@ -16,8 +17,8 @@ FROM openshift/base-centos7
 
 # TODO: Install required packages here:
 # RUN yum install -y ... && yum clean all -y
-RUN yum install -y rubygems && yum clean all -y
-RUN gem install asdf
+#RUN yum install -y rubygems && yum clean all -y
+#RUN gem install asdf
 
 # TODO (optional): Copy the builder files into /opt/app-root
 # COPY ./<builder_folder>/ /opt/app-root/
@@ -28,6 +29,10 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
 # RUN chown -R 1001:1001 /opt/app-root
+
+
+# create user to run the program
+RUN useradd -ms /bin/bash 1001
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001

@@ -7,4 +7,10 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 
-exec asdf -p 8080
+#exec asdf -p 8080
+
+# test the things
+#cd /tmp
+#/usr/bin/stress -v --hdd 1 --hdd-bytes 1M -t 60s
+
+./bin/stress-run
