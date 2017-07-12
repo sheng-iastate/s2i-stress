@@ -5,7 +5,7 @@
 FROM centos/s2i-base-centos7
 
 #RUN rpm -ivh http://mirror.de.leaseweb.net/epel/6/x86_64/epel-release-6-8.noarch.rpm
-RUN yum install -y epel-release \
+RUN yum install -y epel-release
 RUN yum install -y stress glusterfs-fuse
 #RUN mkdir /mnt/gluster
 
